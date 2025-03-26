@@ -81,3 +81,36 @@ Create 5 subnets from this IP address 198.67.23.0
 	First subnet range = 198.67.23.96 - 198.67.23.127
 	First subnet range = 198.67.23.128 - 198.67.23.159
 
+
+
+		  MORE EXAMPLES
+		-----------------
+
+Create four subnets from 172.25.17.0
+
+Subnet Mask	CIDR Range		
+255.255.0.0	172.25.17.0/16
+
+Subnet Mask in Binary = 11111111.11111111.00000000.00000000
+
+IP Address in Binary:
+
+128	64	32	16	8	4	2	1
+
+172.25.0.0 => 10101100.00011001.00000000.00000000
+
+4 = 2^n ==> n = 2
+
+So we use two more bits to subnet 
+11111111.11111111.11000000.00000000= 255.255.192.0 
+Total No of host bits (including network and broadcast address)
+ = 2^n = 2^14 = 16384
+Usable host bits = 2^n - 2
+
+Subnet ranges:
+		Network 	Broadcast	First usable	Last usable 
+		Address		 Address	Address		Address
+Range 1:	172.25.0.0 - 172.25.63.255	172.25.0.1	172.25.63.254
+Range 2:	172.25.64.0 - 172.25.127.255	172.25.64.1	172.25.127.254
+Range 3:	172.25.128.0 - 172.25.191.255	172.25.128.1	172.25.191.254
+Range 4:	172.25.192.0 - 172.25.255.255	172.25.192.1	172.25.255.254
